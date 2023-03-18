@@ -68,7 +68,7 @@ Se você não tiver, verifique estes links: [Node.js](https://nodejs.org/en/) | 
 ```
 <br>
 
-### Assistir ao video do Projeto: [Youtube]()
+### Assistir ao video do Projeto: [Youtube](https://youtu.be/wE2F66YoOIA)
 	
  ------
 	
