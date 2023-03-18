@@ -10,12 +10,16 @@ describe('Pesquisa de Artigos - Blog', () => {
     beforeEach(() => {
         cy.home()
     })
+
     it('Pesquisa por palavras-chave', () => {
         cy.get(loc.PESQUISA.MENU).click()
         cy.get(loc.PESQUISA.PESQUISAR).should('be.visible')
         .type('imposto{enter}')
         cy.get(loc.PESQUISA.RESULTADO)
         .should('contain', 'imposto')
+        cy.get(loc.POST.IMPOSTO).click()
+        cy.get(loc.TAG.SEUS_INVESTIMENTOS)
+        .should('contain', 'investimentos')
     })
 
     it('Pesquisa por categorias', () => {
@@ -23,6 +27,11 @@ describe('Pesquisa de Artigos - Blog', () => {
         .should('be.visible')
         cy.get(loc.PESQUISA.RESULTADO)
         .should('contain', 'Categoria')
+        cy.get(loc.POST.FINANÇAS).click()
+        .should('be.visible')
+      cy.get(loc.TAG.SUAS_FINANCAS)
+      .should('contain', 'finanças')
+        
 
     }) 
     
@@ -35,7 +44,7 @@ describe('Pesquisa de Artigos - Blog', () => {
 
     })
 
-    it.only('Alterando a Pesquisa', () => {
+    it('Alterando a Pesquisa', () => {
         cy.get(loc.PESQUISA.MENU).click()
         cy.get(loc.PESQUISA.PESQUISAR).should('be.visible')
         .type('Cypress.io{enter}')
